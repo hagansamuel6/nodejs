@@ -11,8 +11,8 @@ export class Pulser extends EventEmitter {
 }
 
 const pulser = new Pulser()
-pulser.on('pulse', () => {
-    console.log("working");
+pulser.on('pulse', (...data) => {
+    console.log(`working  ${data}`);
 });
 pulser.start();
 
