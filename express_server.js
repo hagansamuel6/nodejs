@@ -6,11 +6,11 @@ const app = express()
 app.set('view engine', 'ejs')
 
 app.get('/', function(req, res) {
-    res.render('index')
+    res.render('index', {title: 'Home'})
 })
 
 app.get('/about', (req, res) => {
-    res.render('about')
+    res.render('about', {title : 'About'})
 })
 
 app.get('/about-new', (req, res) => {
