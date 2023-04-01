@@ -15,4 +15,3 @@ pulser.on('pulse', (...data) => {
     console.log(`working  ${data}`);
 });
 pulser.start();
-
