@@ -10,6 +10,10 @@ app.get('/', function(req, res) {
     res.render('index', { title: 'Home' })
 })
 
+app.get('/contact', function(req, res) {
+	res.render('contact', {title: 'contact me'});
+})
+
 app.get('/about', (req, res) => {
     res.render('about', { title: 'About' })
 })
@@ -42,5 +46,18 @@ app.get('/api', (req, res) => {
 app.use((req, res) => {
     res.status(404).render('404')
 })
+
+
+//1st phase - even though first phase when it delays
+//set immediate will run
+//so they basically its first phase when the seconds is zero
+setTimeout(() => {
+	console.log('set timeout working')
+}, 1000)
+
+//3rd phase
+setImmediate(() => {console.log('second phase executing')})
+
+console.log('working');
 
 app.listen(8000)
